@@ -1,4 +1,5 @@
 import React from 'react';
+import craftsmanshipStitch from '../assets/images/craftsmanship_stitch_1790236606450.jpg';
 
 export const CraftsmanshipSection: React.FC = () => {
   return (
@@ -65,7 +66,7 @@ export const CraftsmanshipSection: React.FC = () => {
           {/* RIGHT SIDE: 45% Image Area with realistic leather stitching photograph */}
           <div className="w-full lg:w-[45%] relative min-h-[320px] sm:min-h-[420px] lg:min-h-full bg-stone-900 overflow-hidden">
             <img
-              src="/src/assets/images/craftsmanship_stitch_1790236606450.jpg"
+              src={craftsmanshipStitch}
               alt="Artisan master craftsperson meticulously stitching cognac-brown luxury leather on an atelier sewing machine"
               className="w-full h-full object-cover object-center select-none"
               referrerPolicy="no-referrer"

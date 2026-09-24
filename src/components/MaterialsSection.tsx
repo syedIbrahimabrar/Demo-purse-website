@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Sparkles, Check, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Bag3DViewer } from './Bag3DViewer';
+import materialsLeatherMacro from '../assets/images/materials_leather_macro_1790236625928.jpg';
 
 export const MaterialsSection: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -16,16 +16,17 @@ export const MaterialsSection: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 xl:gap-20">
             
-            {/* LEFT SIDE: 45% Visual Area reserved for the 3D Handbag Model */}
+            {/* LEFT SIDE: 45% Visual Area showcasing rich leather texture */}
             <div className="w-full lg:w-[46%] xl:w-[45%]">
               <div className="relative aspect-[4/3] sm:aspect-[16/11] lg:aspect-square w-full rounded-none overflow-hidden shadow-sm border border-stone-200/90 bg-[#EFECE6] group">
                 
-                {/* Warm cognac leather-inspired visual atmosphere from generated atelier photo */}
+                {/* Warm cognac leather-inspired visual atmosphere */}
                 <img
-                  src="/src/assets/images/materials_leather_macro_1790236625928.jpg"
+                  src={materialsLeatherMacro}
                   alt="AURELIS tactile cognac leather grain and polished gold hardware"
                   className="w-full h-full object-cover select-none transition-transform duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
 
                 {/* Subtle warm luxury vignette */}
@@ -33,21 +34,6 @@ export const MaterialsSection: React.FC = () => {
                   aria-hidden="true"
                   className="absolute inset-0 bg-gradient-to-tr from-[#241711]/30 via-transparent to-[#FDFBF7]/20 pointer-events-none"
                 />
-
-                {/*
-                  CRITICAL 3D DESTINATION ARCHITECTURE:
-                  - Dedicated destination container: 'materials-bag-container'
-                  - Prepared for GSAP ScrollTrigger to receive the handbag model from 'hero-bag-container'
-                  - Transparent and correctly centered over the warm cognac leather backdrop
-                */}
-                <div
-                  id="materials-bag-container"
-                  data-scroll-destination="materials"
-                  aria-label="3D Handbag Materials Destination Stage"
-                  className="absolute inset-0 z-10 pointer-events-auto flex items-center justify-center p-4"
-                >
-                  <Bag3DViewer className="w-full h-full" autoRotate={true} allowDownload={false} />
-                </div>
 
                 {/* Refined corner caption badge */}
                 <div className="absolute bottom-4 left-4 z-20 bg-white/90 backdrop-blur-sm px-3.5 py-1.5 border border-stone-200/60 flex items-center gap-2">

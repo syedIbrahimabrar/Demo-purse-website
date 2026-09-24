@@ -6,45 +6,41 @@ import { MaterialsSection } from '../components/MaterialsSection';
 import { CraftsmanshipSection } from '../components/CraftsmanshipSection';
 import { CollectionPreview } from '../components/CollectionPreview';
 import { ServiceAssuranceStrip } from '../components/ServiceAssuranceStrip';
+import { SEO } from '../components/SEO';
 
 export const HomePage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
     <div className="w-full bg-[#FAF8F5]">
-      {/*
-        3. HOMEPAGE — PRESERVE THE EXISTING HERO
-        Preserves the exact background, typography, layout, existing text,
-        and current 3D handbag container ('hero-bag-container').
-      */}
-      <HeroSection onExplore={() => navigate('/collections')} />
-
-      {/*
-        Space Below Hero:
-        Small amount of clean, intentional vertical space (approximately 40–60px on desktop)
-        before the benefits strip, preserving the 3D scroll staging transition.
-      */}
-      <div
-        id="hero-transition-buffer"
-        aria-hidden="true"
-        className="h-10 sm:h-12 md:h-[50px] lg:h-[60px] w-full bg-[#FAF8F5] shrink-0"
+      <SEO
+        title="AURELIS — Luxury Handbag Maison | Timeless Designer Bags"
+        description="Discover AURELIS luxury handcrafted leather handbags. Timeless architectural silhouettes, full-grain Italian leather, and master artisanal craftsmanship."
+        image="/image.png"
       />
 
-      {/* 4. Trust / Benefits Strip */}
+      <HeroSection onExplore={() => navigate('/collections')} />
+
+      {/* Spacing below hero */}
+      <div
+        aria-hidden="true"
+        className="h-8 sm:h-10 md:h-12 w-full bg-[#FAF8F5] shrink-0"
+      />
+
+      {/* Trust / Benefits Strip */}
       <TrustBenefitsStrip />
 
-      {/* 5. Materials Section with dedicated 'materials-bag-container' */}
+      {/* Materials Section */}
       <MaterialsSection />
 
-      {/* 6. Craftsmanship Section */}
+      {/* Craftsmanship Section */}
       <CraftsmanshipSection />
 
-      {/* 7. Homepage Collection Preview — Exactly FOUR bags */}
+      {/* Homepage Collection Preview */}
       <CollectionPreview />
 
-      {/* Service Assurance (Complimentary Shipping & Easy Return) */}
+      {/* Service Assurance */}
       <ServiceAssuranceStrip />
     </div>
   );
 };
-

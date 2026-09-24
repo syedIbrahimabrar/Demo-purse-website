@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ShoppingBag, Plus, Minus, Check, ArrowRight, Shield, RefreshCw } from 'lucide-react';
 import { PRODUCTS, formatPKR } from '../data/products';
 import { ProductColor } from '../types/product';
 import { useCart } from '../context/CartContext';
 import { ProductCard } from '../components/ProductCard';
+import { SEO } from '../components/SEO';
 
 export const ProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -28,9 +29,38 @@ export const ProductDetailPage: React.FC = () => {
     }
   }, [product]);
 
+  const productSchema = useMemo(() => {
+    if (!product) return undefined;
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: product.name,
+      image: product.image,
+      description: product.description,
+      brand: {
+        '@type': 'Brand',
+        name: 'AURELIS'
+      },
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'PKR',
+        price: product.price.toString(),
+        availability: 'https://schema.org/InStock',
+        seller: {
+          '@type': 'Organization',
+          name: 'AURELIS Maison'
+        }
+      }
+    };
+  }, [product]);
+
   if (!product) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center px-6 py-24 text-center bg-[#FAF8F5]">
+        <SEO
+          title="Product Not Found | AURELIS Luxury Maison"
+          description="The requested luxury handbag could not be found in our atelier collection."
+        />
         <h1 className="font-serif text-3xl text-[#131B24] mb-3">Handbag Not Found</h1>
         <p className="font-sans text-xs text-stone-500 uppercase tracking-widest mb-8">
           The requested AURELIS creation does not exist in our active catalog.
@@ -58,6 +88,13 @@ export const ProductDetailPage: React.FC = () => {
 
   return (
     <div className="w-full bg-[#FAF8F5] min-h-screen">
+      <SEO
+        title={`${product.name} — Handcrafted Leather Handbag | AURELIS`}
+        description={product.description}
+        image={product.image}
+        type="product"
+        schema={productSchema}
+      />
       
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-8 pb-4">

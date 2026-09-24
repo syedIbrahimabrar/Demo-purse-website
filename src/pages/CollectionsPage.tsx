@@ -4,6 +4,7 @@ import { SlidersHorizontal, ArrowUpDown } from 'lucide-react';
 import { ProductCard } from '../components/ProductCard';
 import { PRODUCTS } from '../data/products';
 import { ProductCategory } from '../types/product';
+import { SEO } from '../components/SEO';
 
 type SortOption = 'featured' | 'price-asc' | 'price-desc';
 
@@ -38,6 +39,11 @@ export const CollectionsPage: React.FC = () => {
 
   return (
     <div className="w-full bg-[#FAF8F5] min-h-screen">
+      <SEO
+        title="Handbag Collections | AURELIS Luxury Maison"
+        description="Shop the complete AURELIS collection of luxury tote bags, shoulder bags, crossbody bags, and mini evening bags in premium Italian full-grain leather."
+        image="/image.png"
+      />
       
       {/* Compact Editorial Banner */}
       <div className="w-full bg-[#F2EDE4] border-b border-stone-200/80 py-14 sm:py-20 px-6 text-center">

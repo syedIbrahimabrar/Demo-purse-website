@@ -1,5 +1,16 @@
 import { Product } from '../types/product';
 
+// Direct asset imports to guarantee Vite bundles and resolves all images 100% reliably
+import bagEverydayTote from '../assets/images/bag_everyday_tote_1790236648527.jpg';
+import bagLunaSignature from '../assets/images/bag_luna_signature_1790236660806.jpg';
+import bagNoirClassic from '../assets/images/bag_noir_classic_1790236686420.jpg';
+import bagMiniMuse from '../assets/images/bag_mini_muse_1790236700060.jpg';
+import bagMaisonCrossbody from '../assets/images/bag_maison_crossbody_1790236720300.jpg';
+import bagSoftTote from '../assets/images/bag_soft_tote_1790236739542.jpg';
+import bagSignatureTop from '../assets/images/bag_signature_top_1790236757248.jpg';
+import bagLunaShoulder from '../assets/images/bag_luna_shoulder_1790236768646.jpg';
+import materialsLeatherMacro from '../assets/images/materials_leather_macro_1790236625928.jpg';
+
 export const formatPKR = (amount: number): string => {
   return `PKR ${amount.toLocaleString('en-US')}`;
 };
@@ -12,11 +23,11 @@ export const PRODUCTS: Product[] = [
     price: 12500,
     category: 'tote',
     categoryLabel: 'Tote Bags',
-    image: '/src/assets/images/bag_everyday_tote_1790236648527.jpg',
+    image: bagEverydayTote,
     galleryImages: [
-      '/src/assets/images/bag_everyday_tote_1790236648527.jpg',
-      '/src/assets/images/materials_leather_macro_1790236625928.jpg',
-      '/src/assets/images/bag_soft_tote_1790236739542.jpg'
+      bagEverydayTote,
+      materialsLeatherMacro,
+      bagSoftTote
     ],
     colors: [
       { name: 'Cognac Saddle', hex: '#A25929' },
@@ -44,11 +55,11 @@ export const PRODUCTS: Product[] = [
     price: 15900,
     category: 'shoulder',
     categoryLabel: 'Shoulder Bags',
-    image: '/src/assets/images/bag_luna_signature_1790236660806.jpg',
+    image: bagLunaSignature,
     galleryImages: [
-      '/src/assets/images/bag_luna_signature_1790236660806.jpg',
-      '/src/assets/images/materials_leather_macro_1790236625928.jpg',
-      '/src/assets/images/bag_signature_top_1790236757248.jpg'
+      bagLunaSignature,
+      materialsLeatherMacro,
+      bagSignatureTop
     ],
     colors: [
       { name: 'Ivory Cream', hex: '#EDE8DF' },
@@ -76,11 +87,11 @@ export const PRODUCTS: Product[] = [
     price: 11500,
     category: 'tote',
     categoryLabel: 'Tote Bags',
-    image: '/src/assets/images/bag_noir_classic_1790236686420.jpg',
+    image: bagNoirClassic,
     galleryImages: [
-      '/src/assets/images/bag_noir_classic_1790236686420.jpg',
-      '/src/assets/images/materials_leather_macro_1790236625928.jpg',
-      '/src/assets/images/bag_everyday_tote_1790236648527.jpg'
+      bagNoirClassic,
+      materialsLeatherMacro,
+      bagEverydayTote
     ],
     colors: [
       { name: 'Jet Noir', hex: '#141416' },
@@ -106,11 +117,11 @@ export const PRODUCTS: Product[] = [
     price: 8900,
     category: 'mini',
     categoryLabel: 'Mini Bags',
-    image: '/src/assets/images/bag_mini_muse_1790236700060.jpg',
+    image: bagMiniMuse,
     galleryImages: [
-      '/src/assets/images/bag_mini_muse_1790236700060.jpg',
-      '/src/assets/images/materials_leather_macro_1790236625928.jpg',
-      '/src/assets/images/bag_maison_crossbody_1790236720300.jpg'
+      bagMiniMuse,
+      materialsLeatherMacro,
+      bagMaisonCrossbody
     ],
     colors: [
       { name: 'Sand Beige', hex: '#D2C1AA' },
@@ -138,11 +149,11 @@ export const PRODUCTS: Product[] = [
     price: 9500,
     category: 'crossbody',
     categoryLabel: 'Crossbody',
-    image: '/src/assets/images/bag_maison_crossbody_1790236720300.jpg',
+    image: bagMaisonCrossbody,
     galleryImages: [
-      '/src/assets/images/bag_maison_crossbody_1790236720300.jpg',
-      '/src/assets/images/materials_leather_macro_1790236625928.jpg',
-      '/src/assets/images/bag_mini_muse_1790236700060.jpg'
+      bagMaisonCrossbody,
+      materialsLeatherMacro,
+      bagMiniMuse
     ],
     colors: [
       { name: 'Warm Cognac', hex: '#A45D2E' },
@@ -168,11 +179,11 @@ export const PRODUCTS: Product[] = [
     price: 10900,
     category: 'tote',
     categoryLabel: 'Tote Bags',
-    image: '/src/assets/images/bag_soft_tote_1790236739542.jpg',
+    image: bagSoftTote,
     galleryImages: [
-      '/src/assets/images/bag_soft_tote_1790236739542.jpg',
-      '/src/assets/images/materials_leather_macro_1790236625928.jpg',
-      '/src/assets/images/bag_everyday_tote_1790236648527.jpg'
+      bagSoftTote,
+      materialsLeatherMacro,
+      bagEverydayTote
     ],
     colors: [
       { name: 'Muted Taupe', hex: '#A3998C' },
@@ -198,11 +209,11 @@ export const PRODUCTS: Product[] = [
     price: 16500,
     category: 'shoulder',
     categoryLabel: 'Shoulder Bags',
-    image: '/src/assets/images/bag_signature_top_1790236757248.jpg',
+    image: bagSignatureTop,
     galleryImages: [
-      '/src/assets/images/bag_signature_top_1790236757248.jpg',
-      '/src/assets/images/materials_leather_macro_1790236625928.jpg',
-      '/src/assets/images/bag_luna_signature_1790236660806.jpg'
+      bagSignatureTop,
+      materialsLeatherMacro,
+      bagLunaSignature
     ],
     colors: [
       { name: 'Rich Cognac', hex: '#8F4B1E' },
@@ -229,11 +240,11 @@ export const PRODUCTS: Product[] = [
     price: 12900,
     category: 'shoulder',
     categoryLabel: 'Shoulder Bags',
-    image: '/src/assets/images/bag_luna_shoulder_1790236768646.jpg',
+    image: bagLunaShoulder,
     galleryImages: [
-      '/src/assets/images/bag_luna_shoulder_1790236768646.jpg',
-      '/src/assets/images/materials_leather_macro_1790236625928.jpg',
-      '/src/assets/images/bag_luna_signature_1790236660806.jpg'
+      bagLunaShoulder,
+      materialsLeatherMacro,
+      bagLunaSignature
     ],
     colors: [
       { name: 'Midnight Navy', hex: '#141E28' },
