@@ -1,0 +1,6 @@
+{
+  "name": "AURELIS — Luxury Handbag Maison",
+  "description": "Official hero showcase for AURELIS luxury handbags, featuring timeless design, architectural gallery staging, and 3D handbag readiness.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
